@@ -79,7 +79,10 @@ jobs:
           keyAlias=$KEY_ALIAS
           storeFile=upload-keystore.jks
           EOF
-          
+
+      - name: Clean up locales
+        run: dart run loc_cleanup.dart
+        
       - name: Build locales
         run: dart run loc_build.dart
         
